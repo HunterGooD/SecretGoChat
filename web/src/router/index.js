@@ -1,6 +1,8 @@
 import Vue from "vue"
 import VueRouter from "vue-router"
 import Home from "../views/Home.vue"
+import Room from "../views/Room.vue"
+import About from "../views/About.vue"
 Vue.use(VueRouter)
 
 const routes = [{
@@ -11,12 +13,12 @@ const routes = [{
   {
     path: "/about",
     name: "About",
-    component: null,
+    component: About,
   },
   {
     path: "/room/:hash",
     name: "Room",
-    component: null,
+    component: Room,
   }
 ]
 

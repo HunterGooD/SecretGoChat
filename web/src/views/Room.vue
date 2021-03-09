@@ -10,23 +10,23 @@
       </v-toolbar>
 
       <v-card-text class="grey darken-3">
-        <v-virtual-scroll height="500" item-height="20" :items="messages">
-          <template v-slot:default="{ message }">
-            <!-- <v-list-item>
+        <v-virtual-scroll height="650" item-height="150" :items="items">
+          <template v-slot:default="{ item }">
+            <v-list-item>
               <v-list-item-avatar
                 class="align-self-start mr-2"
-                v-if="message.me == false"
+                v-if="item.me == false"
               >
                 <v-avatar size="40">
                   <v-img src="@/assets/img/anon.png"></v-img>
                 </v-avatar>
               </v-list-item-avatar>
 
-              <v-list-item-content :class="{'received-message': message.me == false, 'sent-message': message.me == true}">
+              <v-list-item-content :class="{'received-message': item.me == false, 'sent-message': item.me == true}">
                 <v-card dark elevation="15">
-                  <v-card-title> {{ message.name }} </v-card-title>
+                  <v-card-title> {{ item.name }} </v-card-title>
                   <v-card-text class="pa-2 d-flex flex-column">
-                    {{ message.text }}
+                    {{ item.text }}
                     <span class="text-caption font-italic align-self-end"
                       >19.12</span
                     >
@@ -35,13 +35,13 @@
               </v-list-item-content>
               <v-list-item-avatar
                 class="align-self-start mr-2"
-                v-if="message.me == true"
+                v-if="item.me == true"
               >
                 <v-avatar size="40">
                   <v-img src="@/assets/img/anon.png"></v-img>
                 </v-avatar>
               </v-list-item-avatar>
-            </v-list-item> -->
+            </v-list-item>
           </template>
         </v-virtual-scroll>
 
@@ -53,9 +53,8 @@
                 <v-textarea
                   dark
                   name="input-7-1"
-                  filled
                   label="Сообщение"
-                  auto-grow
+                  rows="1"
                   @keypress.enter="() => ({})"
                 ></v-textarea>
                 <v-btn icon class="ml-4" @click="() => ({})"
@@ -77,7 +76,7 @@ export default {
     messages: [
       {
         name: "askdasd",
-        text: "sadasdasdasdasdasdasdasdasd",
+        text: "sadasdasdasdasdasdasdasdasdasdddd\ndddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
         me: true,
       },
       {
@@ -97,6 +96,11 @@ export default {
       },
     ],
   }),
+  computed: {
+      items() {
+          return this.messages;
+      }
+  },
   components: {},
 };
 </script>

@@ -1,12 +1,19 @@
 <template>
   <v-app>
-    <v-app-bar app dark>
+    <v-app-bar
+      app
+      dark
+      v-if="
+        $router.currentRoute.name == 'Home' ||
+        $router.currentRoute.name == 'About'
+      "
+    >
       <v-img
         class="mx-2"
         src="@/assets/img/11-512.webp"
         max-height="40"
         max-width="40"
-        contain 
+        contain
         style="filter: invert(100%)"
       ></v-img>
       <v-toolbar-title>SecretChat</v-toolbar-title>

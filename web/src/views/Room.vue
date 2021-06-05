@@ -10,7 +10,7 @@
       </v-toolbar>
 
       <v-card-text class="grey darken-3">
-        <v-container fluid class="overflow-y size-chat d-flex flex-column-reverse">
+        <v-container fluid class="overflow-y size-chat">
           <v-list-item v-for="item in items" :key="item.id">
             <v-list-item-avatar
               class="align-self-start mr-2"

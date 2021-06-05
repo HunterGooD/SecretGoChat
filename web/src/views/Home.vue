@@ -10,6 +10,7 @@
       <v-card-title> Создание комнаты </v-card-title>
       <v-card-text>
         <v-text-field
+        v-model="roomName"
           dark
           label="Наименование комнаты"
           outlined
@@ -20,7 +21,7 @@
 
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn text dark outlined @click="click">
+        <v-btn text dark outlined @click="createRoom">
           Создать
         </v-btn></v-card-actions
       >
@@ -32,12 +33,19 @@
 export default {
   name: "Home",
   data: () => ({
+    roomName: "",
     isLoad: false,
   }),
   components: {},
   methods: {
-    click() {
-      console.log();
+    createRoom() {
+      let v = this;
+      if (v.roomName) {
+        let hash = checkAndCreateRoom(v.roomName)
+        if (hash) {
+          v.$router.to = `/room/${hash}`
+        }
+      }
     },
   },
 };

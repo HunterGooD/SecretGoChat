@@ -16,7 +16,7 @@
         contain
         style="filter: invert(100%)"
       ></v-img>
-      <v-toolbar-title>SecretChat</v-toolbar-title>
+      <v-toolbar-title><router-link to="/">SecretChat</router-link> </v-toolbar-title>
     </v-app-bar>
     <v-main>
       <v-container fluid>
@@ -33,6 +33,7 @@
           "
         >
           <i class="subheading">По всем проблемам обращайтесь в соц сети.</i>
+          <i class="subheading">Прочитать о нас <b><router-link to="/about" id="about">тут</router-link></b></i>
           <v-spacer></v-spacer>
 
           <v-btn v-for="icon in icons" :key="icon.icon" class="mx-4" dark icon>
@@ -59,7 +60,7 @@ export default {
   data: () => ({
     icons: [
       { icon: "mdi-vk", link: "https://vk.com/1proger1" },
-      { icon: "mdi-linkedin", link: "" },
+      { icon: "mdi-linkedin", link: "/" },
       { icon: "mdi-github", link: "https://github.com/HunterGooD" },
     ],
   }),
@@ -69,8 +70,12 @@ export default {
 <style>
 a {
   text-decoration: none;
+  color: #fff !important;
 }
 .v-main {
   background: #333336;
+}
+#about {
+  color: red !important;
 }
 </style>
